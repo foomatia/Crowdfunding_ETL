@@ -49,3 +49,9 @@ CREATE TABLE campaign (
     subcategory_id VARCHAR(50)  NOT NULL ,
 	CONSTRAINT "primary_campaign" PRIMARY KEY ("cf_id")	
 );
+ALTER TABLE "campaign" ADD CONSTRAINT "foreigncamp_con_id" 
+FOREIGN KEY("contact_id") REFERENCES "contacts" ("contact_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "foreigncamp_cat_id" 
+FOREIGN KEY("category_id") REFERENCES "category" ("category_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "foreigncamp_subcat_id" 
+FOREIGN KEY("subcategory_id") REFERENCES "subcategory" ("subcategory_id");
